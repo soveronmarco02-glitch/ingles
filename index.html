@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Vocabulary Trainer 🧠</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+
+    <header>
+        <h1>English Vocabulary Trainer</h1>
+        <p>¡Aprende nuevas palabras con nuestro ejercicio interactivo!</p>
+    </header>
+
+   <main class="card-container">
+    <div class="card">
+        
+        <div id="status-message">Cargando vocabulario...</div> 
+        
+        <h2>Word of the Day (Palabra)</h2>
+        <div id="english-word" class="word-display">Press Start</div>
+        <button id="audio-button-word" class="btn audio-btn" title="Escuchar Palabra" disabled>🔊 Palabra</button> 
+        
+        <div class="input-area">
+            <input type="text" id="translation-input" placeholder="Escribe la traducción en español aquí..." autocomplete="off">
+            <button id="check-button" class="btn primary">Verificar</button>
+            <div id="feedback-message" class="translation-result"></div>
+        </div>
+        <div id="spanish-translation" class="translation-display hidden"></div>
+
+        <hr style="width: 80%; margin: 30px auto;">
+
+        <h2>Example Sentence (Oración de ejemplo)</h2>
+        <div id="english-sentence" class="word-display" style="font-size: 1.5em; color: #555;"></div>
+        <button id="audio-button-sentence" class="btn audio-btn" title="Escuchar Oración" disabled>🔊 Oración</button> 
+        <div id="spanish-sentence" class="translation-display hidden" style="border-color: #007bff; color: #007bff;"></div>
+        
+        <div class="controls">
+            <button id="next-button" class="btn primary" disabled>Siguiente Palabra</button>
+            <button id="show-answer-button" class="btn secondary">Mostrar Respuesta</button>
+        </div>
+    </div>
+</main>
+
+    <footer>
+        <p>&copy; 2025 English Study App</p>
+    </footer>
+
+    <script src="script.js"></script> 
+</body>
+</html>
