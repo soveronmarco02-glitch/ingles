@@ -1,6 +1,7 @@
+/* Estilos generales enfocados a niños */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f7f6;
+    font-family: 'Comic Sans MS', cursive, sans-serif; 
+    background-color: #fce4ec; /* Rosa claro de fondo */
     color: #333;
     display: flex;
     flex-direction: column;
@@ -8,20 +9,93 @@ body {
     min-height: 100vh;
     margin: 0;
 }
+/* style.css */
 
+/* --- Estilos para el Selector de Nivel (Nuevo) --- */
+
+.level-selector {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #444; /* Color de texto sutil */
+    font-weight: 500;
+}
+
+#levelSelect {
+    padding: 10px 15px;
+    font-size: 1em;
+    border: 2px solid #007bff; /* Color primario */
+    border-radius: 8px;
+    background-color: #f8f9fa; /* Fondo claro */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    -webkit-appearance: none; /* Oculta la flecha nativa en Chrome/Safari */
+    -moz-appearance: none; /* Oculta la flecha nativa en Firefox */
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23007bff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E"); /* Flecha SVG personalizada */
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+}
+
+#levelSelect:hover {
+    border-color: #0056b3; /* Color más oscuro al pasar el ratón */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 header {
-    background-color: #007bff;
+    background-color: #ff5722; /* Naranja vibrante */
     color: white;
     width: 100%;
     text-align: center;
     padding: 20px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
 header h1 {
     margin-bottom: 5px;
+    font-size: 2.5em;
 }
 
+/* --- GAMIFICACIÓN --- */
+.game-dashboard {
+    width: 90%;
+    max-width: 500px;
+    margin: 20px auto 10px;
+    text-align: center;
+}
+
+.score-display-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 10px;
+    background-color: #fff3e0; /* Crema claro */
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#streak-display {
+    color: #ffc107; /* Amarillo para la racha */
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 15px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+#progress-bar-fill {
+    height: 100%;
+    width: 0%; /* Se controla con JS */
+    background-color: #4caf50; /* Verde de progreso */
+    transition: width 0.5s ease-out;
+}
+
+/* --- CARD Y BOTONES --- */
 .card-container {
     flex-grow: 1;
     display: flex;
@@ -33,8 +107,8 @@ header h1 {
 
 .card {
     background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 20px; 
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
     padding: 40px;
     text-align: center;
     width: 90%;
@@ -42,130 +116,98 @@ header h1 {
 }
 
 .word-display {
-    font-size: 2.5em;
-    font-weight: bold;
-    color: #28a745;
+    font-size: 3em; 
+    font-weight: 900;
+    color: #00bcd4; /* Azul cielo */
     margin: 20px 0;
 }
 
-.translation-display {
-    font-size: 1.5em;
-    color: #dc3545;
-    margin: 10px 0 30px;
-    padding: 10px;
-    border: 1px solid #dc3545;
-    border-radius: 5px;
+.sentence-display {
+    font-size: 1.8em !important;
+    color: #3f51b5; /* Azul índigo */
 }
 
-.controls {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    margin-top: 30px;
-}
-
-.btn {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.btn.primary {
-    background-color: #007bff;
-    color: white;
-}
-
-.btn.primary:hover {
-    background-color: #0056b3;
-}
-
-.btn.secondary {
-    background-color: #ffc107;
-    color: #333;
-}
-
-.btn.secondary:hover {
-    background-color: #e0a800;
-}
-
-.hidden {
-    display: none;
-}
-
-footer {
-    width: 100%;
-    padding: 10px 0;
-    text-align: center;
-    background-color: #333;
-    color: white;
-    margin-top: auto; /* Empuja el footer hacia abajo */
-}
-/* ... (Mantén el CSS anterior) ... */
-
-/* Estilo para separar las secciones */
-hr {
-    border: 0;
-    height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
-}
-
-/* Estilos de botones de audio */
-.audio-btn {
-    background-color: #28a745;
-    color: white;
-    font-size: 1em;
-    padding: 10px 20px;
-    border-radius: 8px; 
-    margin: 10px 0;
-    cursor: pointer;
-    border: none;
-    transition: background-color 0.3s;
-}
-
-.audio-btn:hover {
-    background-color: #1e7e34;
-}
-
-.audio-btn:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-}
-
-/* Ajuste del tamaño de letra para la oración */
-#english-sentence {
-    font-size: 1.5em; 
-    margin: 15px 0;
-}
-/* Estilos para el campo de verificación */
 .input-area {
     margin: 20px 0;
     padding: 15px;
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    border: 1px solid #dee2e6;
+    background-color: #e1f5fe; /* Azul claro */
+    border-radius: 12px;
+    border: 2px solid #00bcd4;
 }
 
 #translation-input {
     width: calc(100% - 20px);
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ced4da;
-    border-radius: 5px;
-    font-size: 1.1em;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #00bcd4;
+    border-radius: 8px;
+    font-size: 1.2em;
     text-align: center;
 }
 
-#check-button {
-    width: 100%;
-    margin-top: 5px;
-    background-color: #17a2b8; /* Color de información para verificar */
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+    font-weight: bold;
 }
 
-#check-button:hover {
-    background-color: #117a8b;
+.btn:active {
+    transform: scale(0.95);
+}
+
+.btn.primary {
+    background-color: #ff9800; /* Naranja */
+    color: white;
+}
+
+.btn.primary:hover {
+    background-color: #fb8c00;
+}
+
+.btn.secondary {
+    background-color: #4caf50; /* Verde */
+    color: white;
+}
+
+.btn.secondary:hover {
+    background-color: #43a047;
+}
+
+.btn.check-btn {
+    background-color: #3f51b5; /* Azul índigo */
+    color: white;
+    width: 100%;
+}
+.btn.check-btn:hover {
+    background-color: #303f9f;
+}
+
+.btn.audio-btn {
+    background-color: #f44336; /* Rojo */
+}
+.btn.audio-btn:hover {
+    background-color: #d32f2f;
+}
+
+/* --- FEEDBACK VISIBLE --- */
+.feedback-correct {
+    background-color: #81c784; /* Verde suave */
+    color: #1b5e20;
+    border: 2px solid #4caf50;
+    padding: 15px;
+    font-size: 1.3em;
+}
+
+.feedback-incorrect {
+    background-color: #e57373; /* Rojo suave */
+    color: #b71c1c;
+    border: 2px solid #f44336;
+    padding: 15px;
+    font-size: 1.3em;
 }
 
 .translation-result {
@@ -176,19 +218,60 @@ hr {
     min-height: 20px;
 }
 
-.feedback-correct {
-    background-color: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
+.translation-display {
+    font-size: 1.3em;
+    margin: 10px 0 30px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #7986cb;
+    color: #3f51b5;
 }
 
-.feedback-incorrect {
-    background-color: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
+.hidden {
+    display: none;
 }
 
-/* Ocultamos el div de traducción estática al inicio */
-#spanish-translation {
-    display: none !important; 
+.btn.small {
+    padding: 5px 10px;
+    font-size: 0.8em;
+}
+
+/* Estilos para el traductor rápido */
+.translator-search {
+    background-color: #fffde7; /* Amarillo muy claro */
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 15px;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border: 2px dashed #ffc107;
+}
+
+#search-input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ffc107;
+    font-size: 1em;
+}
+
+#search-button {
+    width: 85%;
+    background-color: #ffc107; /* Amarillo */
+    color: #333;
+}
+
+#search-button:hover {
+    background-color: #ffb300;
+}
+
+footer {
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    background-color: #333;
+    color: white;
+    margin-top: auto; 
 }
