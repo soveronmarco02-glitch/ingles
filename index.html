@@ -3,48 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English Vocabulary Trainer 🧠</title>
+    <title>English Vocabulary Quest ✨</title>
     <link rel="stylesheet" href="styles.css"> 
 </head>
 <body>
 
     <header>
-        <h1>English Vocabulary Trainer</h1>
-        <p>¡Aprende nuevas palabras con nuestro ejercicio interactivo!</p>
+        <h1>English Vocabulary Quest ✨</h1>
+        <p>¡Aprende y gana puntos!</p>
     </header>
-
-   <main class="card-container">
-    <div class="card">
-        
-        <div id="status-message">Cargando vocabulario...</div> 
-        
-        <h2>Word of the Day (Palabra)</h2>
-        <div id="english-word" class="word-display">Press Start</div>
-        <button id="audio-button-word" class="btn audio-btn" title="Escuchar Palabra" disabled>🔊 Palabra</button> 
-        
-        <div class="input-area">
-            <input type="text" id="translation-input" placeholder="Escribe la traducción en español aquí..." autocomplete="off">
-            <button id="check-button" class="btn primary">Verificar</button>
-            <div id="feedback-message" class="translation-result"></div>
-        </div>
-        <div id="spanish-translation" class="translation-display hidden"></div>
-
-        <hr style="width: 80%; margin: 30px auto;">
-
-        <h2>Example Sentence (Oración de ejemplo)</h2>
-        <div id="english-sentence" class="word-display" style="font-size: 1.5em; color: #555;"></div>
-        <button id="audio-button-sentence" class="btn audio-btn" title="Escuchar Oración" disabled>🔊 Oración</button> 
-        <div id="spanish-sentence" class="translation-display hidden" style="border-color: #007bff; color: #007bff;"></div>
-        
-        <div class="controls">
-            <button id="next-button" class="btn primary" disabled>Siguiente Palabra</button>
-            <button id="show-answer-button" class="btn secondary">Mostrar Respuesta</button>
-        </div>
+     <div class="container">
+    <h1>Word Quiz</h1>
+    
+    <div class="level-selector">
+        <label for="levelSelect">Selecciona el Nivel:</label>
+        <select id="levelSelect" onchange="loadVocabularyForLevel()">
+            <option value="all">Todos los Niveles (300 palabras)</option>
+            <option value="basico">Nivel 1: Básico (A1/A2)</option>
+            <option value="intermedio">Nivel 2: Intermedio (B1)</option>
+            <option value="avanzado">Nivel 3: Avanzado (B2)</option>
+        </select>
     </div>
-</main>
+ 
+</div>
+    <section class="game-dashboard">
+        <div class="score-display-container">
+            <p id="score-display">Puntuación: 0 puntos</p>
+            <p id="streak-display">🔥 Racha: 0</p> 
+            <button id="reset-button" class="btn secondary small">🔄 Reiniciar Juego</button>
+        </div>
+        <div class="progress-bar-container">
+            <div id="progress-bar-fill"></div>
+        </div>
+    </section>
+
+    <main class="card-container">
+        <div class="card">
+            
+            <div id="status-message">Cargando vocabulario...</div> 
+            
+            <h2>Palabra Secreta:</h2>
+            <div id="english-word" class="word-display">¡Toca Empezar!</div>
+            <button id="audio-button-word" class="btn audio-btn" title="Escuchar Palabra" disabled>🔊 Palabra</button> 
+            
+            <div class="input-area">
+                <input type="text" id="translation-input" placeholder="Escribe la traducción aquí..." autocomplete="off">
+                <button id="check-button" class="btn check-btn">Verificar</button> 
+                <div id="feedback-message" class="translation-result"></div>
+            </div>
+            
+            <div id="spanish-translation" class="translation-display hidden"></div>
+
+            <hr style="width: 80%; margin: 30px auto;">
+
+            <h2>Oración Mágica:</h2>
+            <div id="english-sentence" class="word-display sentence-display"></div>
+            <button id="audio-button-sentence" class="btn audio-btn" title="Escuchar Oración" disabled>🔊 Oración</button> 
+            <div id="spanish-sentence" class="translation-display hidden sentence-translation" style="border-color: #007bff; color: #007bff;"></div>
+            
+            <div class="controls">
+                <button id="next-button" class="btn primary">Start Quest!</button>
+                <button id="show-answer-button" class="btn secondary">🤫 Pista</button>
+            </div>
+        </div>
+    </main>
+    
+    <section class="translator-search">
+        <h2>Traductor Rápido 🔎</h2>
+        <input type="text" id="search-input" placeholder="Escribe una palabra en español..." />
+        <button id="search-button" class="btn primary">Buscar y Escuchar</button>
+        
+        <div id="search-result" class="translation-result">
+            </div>
+    </section>
 
     <footer>
-        <p>&copy; 2025 English Study App</p>
+        <p>&copy; 2025 English Vocabulary App</p>
     </footer>
 
     <script src="script.js"></script> 
