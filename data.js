@@ -1,6 +1,3 @@
-// =========================================================
-//                  data.js (Base de Datos de Vocabulario)
-// =========================================================
 
 // --- Nivel 1: Básico (A1/A2) - 100 Palabras ---
 export const Nivel_Basico_A1A2 = [
