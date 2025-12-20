@@ -1,4 +1,4 @@
-/* Estilos generales enfocados a niños */
+
 body {
     font-family: 'Comic Sans MS', cursive, sans-serif; 
     background-color: #fce4ec; /* Rosa claro de fondo */
@@ -9,9 +9,7 @@ body {
     min-height: 100vh;
     margin: 0;
 }
-/* style.css */
 
-/* --- Estilos para el Selector de Nivel (Nuevo) --- */
 
 .level-selector {
     margin-bottom: 20px;
@@ -28,8 +26,8 @@ body {
     background-color: #f8f9fa; /* Fondo claro */
     cursor: pointer;
     transition: all 0.3s ease;
-    -webkit-appearance: none; /* Oculta la flecha nativa en Chrome/Safari */
-    -moz-appearance: none; /* Oculta la flecha nativa en Firefox */
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
     appearance: none;
     background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23007bff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E"); /* Flecha SVG personalizada */
     background-repeat: no-repeat;
@@ -54,7 +52,7 @@ header h1 {
     font-size: 2.5em;
 }
 
-/* --- GAMIFICACIÓN --- */
+
 .game-dashboard {
     width: 90%;
     max-width: 500px;
@@ -95,7 +93,7 @@ header h1 {
     transition: width 0.5s ease-out;
 }
 
-/* --- CARD Y BOTONES --- */
+
 .card-container {
     flex-grow: 1;
     display: flex;
@@ -193,7 +191,7 @@ header h1 {
     background-color: #d32f2f;
 }
 
-/* --- FEEDBACK VISIBLE --- */
+
 .feedback-correct {
     background-color: #81c784; /* Verde suave */
     color: #1b5e20;
